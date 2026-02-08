@@ -1,12 +1,11 @@
 import { useState, useMemo, useRef } from 'react';
 import { useStore } from '../store/useStore';
 import { formatRupiah, formatDate } from '../utils/format';
-import { Printer, Calendar, TrendingUp, CreditCard, Banknote, AlertOctagon, FileText, BarChart2, PieChart as PieChartIcon, Package } from 'lucide-react';
+import { Calendar, TrendingUp, CreditCard, Banknote, AlertOctagon, FileText } from 'lucide-react';
 import { useReactToPrint } from 'react-to-print';
 import { isSameDay, parseISO, subDays, format } from 'date-fns';
 import { id } from 'date-fns/locale';
-import clsx from 'clsx';
-import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Cell, PieChart, Pie, Legend } from 'recharts';
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, ResponsiveContainer, Cell, PieChart, Pie, Legend } from 'recharts';
 
 const COLORS = ['#4f46e5', '#10b981', '#f59e0b', '#ef4444', '#8b5cf6'];
 
@@ -251,7 +250,7 @@ const Reports = () => {
                           dataKey="qty"
                           isAnimationActive={false}
                         >
-                          {reportData.topProducts.map((entry, index) => (
+                          {reportData.topProducts.map((_, index) => (
                             <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
                           ))}
                         </Pie>
@@ -260,7 +259,7 @@ const Reports = () => {
                           verticalAlign="middle" 
                           align="right"
                           wrapperStyle={{ fontSize: '10px' }}
-                          formatter={(value, entry: any) => entry.payload.name}
+                          formatter={(_, entry: any) => entry.payload.name}
                         />
                       </PieChart>
                     </ResponsiveContainer>

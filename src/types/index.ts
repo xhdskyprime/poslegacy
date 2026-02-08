@@ -121,12 +121,6 @@ export interface StoreState {
   startShift: (startCash: number) => void;
   endShift: (actualCash: number, actualQris: number) => void;
 
-  // User Management Actions
-  users: User[];
-  addUser: (user: Omit<User, 'id'>) => void;
-  updateUser: (id: string, updates: Partial<User>) => void;
-  deleteUser: (id: string) => void;
-
   // Cart Actions
   addToCart: (product: Product) => void;
   removeFromCart: (productId: string) => void;

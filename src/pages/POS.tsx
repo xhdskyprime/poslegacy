@@ -1,4 +1,4 @@
-import { useState, useMemo, useRef, useEffect } from 'react';
+import { useState, useMemo, useRef } from 'react';
 import { useStore } from '../store/useStore';
 import { Search, Plus, Minus, Trash2, CreditCard, Banknote, ShoppingBag, Printer, X, CheckCircle, Tag, LogOut } from 'lucide-react';
 import { useReactToPrint } from 'react-to-print';

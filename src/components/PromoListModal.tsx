@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { useStore } from '../store/useStore';
 import { X, Tag, Percent, DollarSign } from 'lucide-react';
 import { formatRupiah } from '../utils/format';

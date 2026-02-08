@@ -1,5 +1,5 @@
 import { create } from 'zustand';
-import { persist, createJSONStorage } from 'zustand/middleware';
+import { persist } from 'zustand/middleware';
 import type { StoreState, Product, Transaction, User, Promo, Shift, Category } from '../types';
 
 const INITIAL_USERS: User[] = [
